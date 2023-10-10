@@ -213,6 +213,7 @@ func (c *Client) Promo(ticketID int, code string) (*PromoCode, error) {
 // Book books a ticket, given a *Ticket and an amout (with the option of a promo code).
 // The booking details and an error, if encountered, will be returned.
 func (c *Client) Book(ticket *Ticket, amount int, promo *PromoCode) (*Booking, error) {
+	fmt.Println(ticket)
 	booking := Booking{}
 	pl := payload{
 		"ticket_id": ticket.ID,
